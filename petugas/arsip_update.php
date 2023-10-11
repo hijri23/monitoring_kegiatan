@@ -42,15 +42,15 @@ $tanggal_now = date('d');
 list($tahun_upload, $bulan_upload, $tanggal_upload) = explode('-', $_POST['tanggal']);
 
 if ($tahun_upload > $tahun_now) {
-	header("location:arsip_tambah?alert=tanggal_gagal&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan");
+	header("location:arsip_edit?alert=tanggal_gagal&id=$id&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan&kode=$kode");
 	die;
 } elseif ($tahun_upload == $tahun_now) {
 	if ($bulan_upload > $bulan_now) {
-		header("location:arsip_tambah?alert=tanggal_gagal&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan");
+		header("location:arsip_edit?alert=tanggal_gagal&id=$id&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan&kode=$kode");
 		die;
 	} elseif ($bulan_upload == $bulan_now) {
 		if ($tanggal_upload > $tanggal_now) {
-			header("location:arsip_tambah?alert=tanggal_gagal&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan");
+			header("location:arsip_edit?alert=tanggal_gagal&id=$id&tanggal=$tanggal&nama=$nama&kategori=$kategori&keterangan=$keterangan&kode=$kode");
 			die;
 		}
 	}

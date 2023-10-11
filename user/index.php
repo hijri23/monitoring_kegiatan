@@ -123,7 +123,7 @@
 <div class="product-sales-area mg-tb-30">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-12">
                 <div class="product-sales-chart">
                     <div class="portlet-title">
                         <div class="row">
@@ -144,50 +144,105 @@
                             <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah arsip</h5>
                         </li>
                     </ul>
-                    <div id="extra-area-chart" style="height: 356px;"></div>
+                    <div id="grafik-flow-arsip" style="height: 356px;"></div>
 
 
                     <div id="morris-area-chart"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
 
-                <?php
-                $id = $_SESSION['id'];
-                $saya = mysqli_query($koneksi, "select * from user where user_id='$id'");
-                $s = mysqli_fetch_assoc($saya);
-                ?>
-                <div class="single-cards-item">
-                    <div class="single-product-image">
-                        <a href="#">
-                            <img src="../assets/img/product/profile-bg.jpg" alt="">
-                        </a>
-                    </div>
+<!-- AMBIL DATA UNTUK CHART PETUGAS -->
+<?php
+$nama_petugas = [];
+$jumlah_arsip = [];
+foreach (mysqli_query($koneksi, "SELECT * FROM petugas") as $petugas) {
+    $nama_petugas[] = $petugas['petugas_nama'];
+    $id_petugas = $petugas['petugas_id'];
 
-                    <div class="single-product-text">
-                        <?php
-                        if ($s['user_foto'] == "") {
-                        ?>
-                            <img class="img-user" src="../gambar/sistem/user.png">
-                        <?php
-                        } else {
-                        ?>
-                            <img class="img-user" src="../gambar/user/<?php echo $s['user_foto']; ?>">
-                        <?php
-                        }
-                        ?>
+    $cari_arsip = mysqli_query($koneksi, "SELECT * FROM arsip WHERE arsip_petugas ='$id_petugas' ");
+    $hasil_arsip = mysqli_num_rows($cari_arsip);
+    $jumlah_arsip[] = $hasil_arsip;
+}
+?>
 
-                        <h4><a class="cards-hd-dn" href="#"><?php echo $s['user_nama']; ?></a></h4>
-                        <h5>master arsip</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
+<!-- DIV UNTUK CHART PETUGAS -->
+<div id="data-chart-panjang-petugas" data-value="<?php echo count($nama_petugas); ?>"></div>
+
+<?php for ($i = 0; $i < count($nama_petugas); $i++) : ?>
+    <div id="data-chart-petugas<?php echo $i; ?>" data-value="<?php echo $nama_petugas[$i]; ?>"></div>
+<?php endfor; ?>
+
+<?php for ($i = 0; $i < count($nama_petugas); $i++) : ?>
+    <div id="data-chart-petugas-arsip<?php echo $i; ?>" data-value="<?php echo $jumlah_arsip[$i]; ?>"></div>
+<?php endfor; ?>
+
+<!-- INI BAGIAN CHART PETUGAS -->
+<div class="row">
+    <div class="col-12">
+        <div class="product-sales-chart">
+            <div class="portlet-title">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="caption pro-sl-hd">
+                            <span class="caption-subject"><b>Jumlah Arsip Per Petugas</b></span>
+                        </div>
                     </div>
                 </div>
-
+            </div>
+            <div>
+                <canvas id="arsip-petugas"></canvas>
             </div>
         </div>
     </div>
 </div>
 
+<!-- AMBIL DATA UNTUK CHART -->
+<?php
+$nama_kategori = [];
+$jumlah_arsip = [];
+foreach (mysqli_query($koneksi, "SELECT * FROM kategori") as $kategori) {
+    $nama_kategori[] = $kategori['kategori_nama'];
+    $id_kategori = $kategori['kategori_id'];
+
+    $cari_arsip = mysqli_query($koneksi, "SELECT * FROM arsip WHERE arsip_kategori ='$id_kategori' ");
+    $hasil_arsip = mysqli_num_rows($cari_arsip);
+    $jumlah_arsip[] = $hasil_arsip;
+}
+?>
+
+<!-- DIV UNTUK CHART KATERGORI -->
+<div id="data-chart-panjang-kategori" data-value="<?php echo count($nama_kategori); ?>"></div>
+
+<?php for ($i = 0; $i < count($nama_kategori); $i++) : ?>
+    <div id="data-chart-kategori<?php echo $i; ?>" data-value="<?php echo $nama_kategori[$i]; ?>"></div>
+<?php endfor; ?>
+
+<?php for ($i = 0; $i < count($nama_kategori); $i++) : ?>
+    <div id="data-chart-kategori-arsip<?php echo $i; ?>" data-value="<?php echo $jumlah_arsip[$i]; ?>"></div>
+<?php endfor; ?>
+
+<!-- INI BAGIAN CHART KATERGORI -->
+<div class="row">
+    <div class="col-12">
+        <div class="product-sales-chart">
+            <div class="portlet-title">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="caption pro-sl-hd">
+                            <span class="caption-subject"><b>Jumlah Arsip Per Kategori</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <canvas id="arsip-kategori"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include 'footer.php'; ?>

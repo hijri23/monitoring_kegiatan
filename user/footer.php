@@ -1,8 +1,4 @@
-<!-- <br>
-<br>
-<br>
-<br>
-<div class="footer-copyright-area mg-t-30">
+<!-- <div class="footer-copyright-area mg-t-30">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
@@ -45,13 +41,14 @@
 <script src="../assets/js/DataTables/datatables.js"></script>
 <script src="../assets/js/pdf/jquery.media.js"></script>
 <script src="../assets/js/pdf/pdf-active.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
 		$('.table-datatable').DataTable();
 
 		Morris.Area({
-			element: 'extra-area-chart',
+			element: 'grafik-flow-arsip',
 			data: [
 
 				<?php
@@ -92,6 +89,84 @@
 			resize: true
 
 		});
+	});
+
+
+	// ==================================================== PETUGAS ====================================================
+	var panjang_petugas = document.getElementById('data-chart-panjang-petugas').getAttribute('data-value');
+
+	var daftar_petugas = [];
+	for (var i = 0; i < panjang_petugas; i++) {
+		var nama_petugas = document.getElementById('data-chart-petugas' + i).getAttribute('data-value');
+		daftar_petugas[i] = nama_petugas;
+	}
+
+	var jumlah_arsip = [];
+	for (var i = 0; i < panjang_petugas; i++) {
+		var arsip = document.getElementById('data-chart-petugas-arsip' + i).getAttribute('data-value');
+		jumlah_arsip[i] = arsip;
+	}
+
+	const chart1 = document.getElementById('arsip-petugas');
+
+	new Chart(chart1, {
+		type: 'bar',
+		data: {
+			labels: daftar_petugas,
+			datasets: [{
+				label: 'Jumlah Arsip',
+				data: jumlah_arsip,
+				borderWidth: 2,
+				// borderColor: '#FF6384',
+				// backgroundColor: '#FFB1C1',
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
+	});
+
+
+	// ==================================================== KATEGORI ====================================================
+	var panjang_kategori = document.getElementById('data-chart-panjang-kategori').getAttribute('data-value');
+
+	var daftar_kategori = [];
+	for (var i = 0; i < panjang_kategori; i++) {
+		var nama_kategori = document.getElementById('data-chart-kategori' + i).getAttribute('data-value');
+		daftar_kategori[i] = nama_kategori;
+	}
+
+	var jumlah_arsip = [];
+	for (var i = 0; i < panjang_kategori; i++) {
+		var arsip = document.getElementById('data-chart-kategori-arsip' + i).getAttribute('data-value');
+		jumlah_arsip[i] = arsip;
+	}
+
+	const chart2 = document.getElementById('arsip-kategori');
+
+	new Chart(chart2, {
+		type: 'bar',
+		data: {
+			labels: daftar_kategori,
+			datasets: [{
+				label: 'Jumlah Kategori',
+				data: jumlah_arsip,
+				borderWidth: 2,
+				// borderColor: '#FF6384',
+				// backgroundColor: '#FFB1C1',
+			}]
+		},
+		options: {
+			scales: {
+				y: {
+					beginAtZero: true
+				}
+			}
+		}
 	});
 </script>
 </body>

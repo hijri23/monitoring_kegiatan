@@ -68,7 +68,7 @@
 
                 if (isset($_GET['alert'])) {
                     if ($_GET['alert'] == "gagal") {
-                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME ATAU PASSWORD SALAH!</div>";
                     } else if ($_GET['alert'] == "logout") {
                         echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
                     } else if ($_GET['alert'] == "belum_login") {

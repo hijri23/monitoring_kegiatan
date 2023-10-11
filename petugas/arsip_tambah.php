@@ -61,7 +61,7 @@
 
                         <div class="form-group">
                             <label>Kode Arsip</label>
-                            <input type="text" class="form-control" name="kode" required="required">
+                            <input type="text" class="form-control" name="kode" value="<?php echo isset($_GET['kode'])  ? $_GET['kode'] : '' ?>" required="required">
                         </div>
 
                         <div class="form-group">
