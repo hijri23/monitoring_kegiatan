@@ -85,7 +85,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button> -->
-                    <a class="navbar-brand" href="#">BPS Kota Mataram</a>
+                    <a class="navbar-brand" href="#">BPS Kabupaten Sumbawa</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -119,8 +119,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div style="margin-top: 140px;">
-                            <h1>Sistem Pengarsipan Dokumen BPS Kota Mataram</h1>
-                            <p>Manajemen file arsip dengan mudah dan cepat.</p>
+                            <h1>Monitoring Kegiatan BPS Kabupaten Sumbawa</h1>
+                            <p>Manajemen Kegiatan dengan mudah dan cepat.</p>
 
                             <br>
                             <br>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | Sistem Informasi Arsip Digital</title>
+    <title>Login | Sistem Informasi Monitoring Kegiatan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -54,12 +54,12 @@
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>ARSIP DIGITAL</h3>
-                <h4>Sistem Informasi Pengarsipan BPS Kota Mataram</h4>
+                <h3>MONITORING KEGIATAN</h3>
+                <h4>Sistem Informasi Monitoring Kegiatan BPS Kabupaten Sumbawa</h4>
 
                 <br>
 
-                <p>Silakan login untuk mengakses arsip</p>
+                <p>Silakan login untuk mengakses kegiatan</p>
 
             </div>
             <div class="content-error">
@@ -141,7 +141,7 @@
                 <a href="index">Kembali</a>
             </div>
             <div class="text-center login-footer">
-                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi Arsip Digital (SIAD)</p>
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi Monitoring Kegiatan</p>
             </div>
         </div>
     </div>
