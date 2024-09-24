@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                    <h3 class="box-title">Total Arsip</h3>
+                    <h3 class="box-title">Total Kegiatan</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash3"></div>
@@ -51,7 +51,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                    <h3 class="box-title">Kategori Arsip</h3>
+                    <h3 class="box-title">Kategori Kegiatan</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash4"></div>
@@ -95,7 +95,7 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah arsip masuk</h5>
+                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah Kegiatan Berjalan</h5>
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>

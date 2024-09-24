@@ -95,6 +95,8 @@
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
 
+            
+
                 <nav class="sidebar-nav left-sidebar-menu-pro" style="margin-top: 30px">
 
                     <ul class="metismenu" id="menu1">
@@ -106,12 +108,12 @@
                         </li>
 
                         <li>
-                            <a href="arsip" class="<?php echo ($active == 'arsip') ? "bg-info" : "" ?>" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Arsip Saya</span></a>
+                            <a href="arsip" class="<?php echo ($active == 'arsip') ? "bg-info" : "" ?>" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Kegiatan</span></a>
                         </li>
 
-                        <li>
+                        <!-- <li>
                             <a href="kategori" class="<?php echo ($active == 'kategori') ? "bg-info" : "" ?>" aria-expanded="false"><span class="educate-icon educate-course icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Data Kategori</span></a>
-                        </li>
+                        </li> -->
 
                         <li>
                             <a href="panduan" class="<?php echo ($active == 'panduan') ? "bg-info" : "" ?>" aria-expanded="false"><span class="educate-icon educate-library icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Panduan </span></a>
@@ -133,99 +135,6 @@
                             <a href="logout.php" aria-expanded="false"><span class="educate-icon educate-pages icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Logout</span></a>
                         </li>-->
 
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-
-
-
-
-
-
-
-
-                        <li class="nav-item dropright">
-                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                <?php
-                                $id_petugas = $_SESSION['id'];
-
-                                $profil = mysqli_query($koneksi, "select * from petugas where petugas_id='$id_petugas'");
-
-                                $profil = mysqli_fetch_assoc($profil);
-                                if ($profil['petugas_foto'] == "") {
-                                ?>
-                                    <img class="img-circle" src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
-                                <?php } else { ?>
-                                    <img class="img-circle" src="../gambar/petugas/<?php echo $profil['petugas_foto'] ?>" style="width: 20px;height: 20px">
-                                <?php } ?>
-                                <span><i class="fa fa-space" aria-hidden="true"></i></span>
-                                <span><i class="fa fa-space" aria-hidden="true"></i></span>
-                                <span class="admin-name mini-click-non"><?php echo $_SESSION['nama']; ?> <!-- [ <b>Petugas</b> ]--></span>
-
-                                <i class=" edu-icon edu-up-arrow"></i>
-                            </a>
-                            <ul role="menu" class="slideInUp author-log dropright-menu zoomIn">
-                                <li><a href="profil"><span class="edu-icon edu-home-admin author-log-ic"></span>Profil Saya</a></li>
-                                <li><a href="gantipassword"><span class="edu-icon edu-user-rounded author-log-ic"></span>Ganti Password</a></li>
-                                <li><a href="logout"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
             </div>
@@ -266,6 +175,32 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                            <li class="nav-item dropright">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                <?php
+                                $id_petugas = $_SESSION['id'];
+
+                                $profil = mysqli_query($koneksi, "select * from petugas where petugas_id='$id_petugas'");
+
+                                $profil = mysqli_fetch_assoc($profil);
+                                if ($profil['petugas_foto'] == "") {
+                                ?>
+                                    <img class="img-circle" src="../gambar/sistem/user.png" style="width: 20px;height: 20px">
+                                <?php } else { ?>
+                                    <img class="img-circle" src="../gambar/petugas/<?php echo $profil['petugas_foto'] ?>" style="width: 20px;height: 20px">
+                                <?php } ?>
+                                <span><i class="fa fa-space" aria-hidden="true"></i></span>
+                                <span><i class="fa fa-space" aria-hidden="true"></i></span>
+                                <span class="admin-name mini-click-non"><?php echo $_SESSION['nama']; ?> <!-- [ <b>Petugas</b> ]--></span>
+
+                                <i class=" edu-icon edu-up-arrow"></i>
+                            </a>
+                            <ul role="menu" class="slideInUp author-log dropdown-menu zoomIn">
+                                <!-- <li><a href="profil"><span class="edu-icon edu-home-admin author-log-ic"></span>Profil Saya</a></li>
+                                <li><a href="gantipassword"><span class="edu-icon edu-user-rounded author-log-ic"></span>Ganti Password</a></li> -->
+                                <li><a href="logout"><span class="edu-icon edu-locked author-log-ic"></span>Log Out</a></li>
+                            </ul>
+                        </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -275,6 +210,9 @@
                     </div>
                 </div>
             </div>
+
+
+            
             <!-- Mobile Menu start -->
             <div class="mobile-menu-area">
                 <div class="container">

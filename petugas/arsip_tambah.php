@@ -10,13 +10,13 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Upload Arsip</h4>
+                                <h4 style="margin-bottom: 0px">Tambah Kegiatan</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu" style="padding-top: 0px">
                                 <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Arsip</span></li>
+                                <li><span class="bread-blod">Kegiatan</span></li>
                             </ul>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
             <div class="panel panel">
 
                 <div class="panel-heading">
-                    <h3 class="panel-title">Upload arsip</h3>
+                    <h3 class="panel-title">Tambah Kegiatan</h3>
                 </div>
                 <div class="panel-body">
 
@@ -60,21 +60,57 @@
                     <form method="post" action="arsip_aksi.php" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label>Kode Arsip</label>
-                            <input type="text" class="form-control" name="kode" value="<?php echo isset($_GET['kode'])  ? $_GET['kode'] : '' ?>" required="required">
+                            <label>Nama Kegiatan</label>
+                            <input type="text" class="form-control" name="kegiatan" value="<?php echo isset($_GET['kegiatan'])  ? $_GET['kegiatan'] : '' ?>" required="required">
                         </div>
 
                         <div class="form-group">
-                            <label>Tanggal Arsip</label>
-                            <input type="date" class="form-control" name="tanggal" value="<?php echo isset($_GET['tanggal'])  ? $_GET['tanggal'] : '' ?>" required="required">
+                            <label>Tim Kerja</label>
+                            <select class="form-control" name="tim" required="required">
+                                <option value="">Pilih Tim Kerja</option>
+                                <?php
+                                $tim = mysqli_query($koneksi, "SELECT * FROM tim");
+                                while ($k = mysqli_fetch_array($tim)) {
+                                ?>
+                                    <option value="<?php echo $k['tim_nama']; ?>" <?php echo (isset($_GET['tim']) && ($_GET['tim'] == $k['tim_nama']))  ? "selected='selected'" : '' ?>><?php echo $k['tim_nama']; ?></option>
+                                <?php
+                                }
+                                ?>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label>Nama Arsip</label>
-                            <input type="text" class="form-control" name="nama" value="<?php echo isset($_GET['nama'])  ? $_GET['nama'] : '' ?>" required="required">
+                            <label>Tanggal Mulai</label>
+                            <input type="date" class="form-control" name="tanggal_mulai" value="<?php echo isset($_GET['tanggal_mulai'])  ? $_GET['tanggal_mulai'] : '' ?>" required="required">
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label>Tanggal Berakhir</label>
+                            <input type="date" class="form-control" name="tanggal_berakhir" value="<?php echo isset($_GET['tanggal_berakhir'])  ? $_GET['tanggal_berakhir'] : '' ?>" required="required">
                         </div>
 
                         <div class="form-group">
+                            <label>Target</label>
+                            <input type="text" class="form-control" name="target" value="<?php echo isset($_GET['target'])  ? $_GET['target'] : '' ?>" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Realisasi</label>
+                            <input type="text" class="form-control" name="realisasi" value="<?php echo isset($_GET['realisasi'])  ? $_GET['realisasi'] : '' ?>" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Satuan</label>
+                            <input type="text" class="form-control" name="satuan" value="<?php echo isset($_GET['satuan'])  ? $_GET['satuan'] : '' ?>" required="required">
+                        </div>
+
+                        <div class="form-group">
+                            <label>SPJ</label>
+                            <textarea class="form-control" name="spj" required="required"><?php echo isset($_GET['keterangan'])  ? $_GET['keterangan'] : '' ?></textarea>
+                        </div>
+
+                        <!-- <div class="form-group">
                             <label>Kategori</label>
                             <select class="form-control" name="kategori" required="required">
                                 <option value="">Pilih kategori</option>
@@ -97,7 +133,7 @@
                         <div class="form-group">
                             <label>File</label>
                             <input type="file" name="file">
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label></label>
