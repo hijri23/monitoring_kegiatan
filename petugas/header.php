@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Petugas - Sistem Informasi Arsip Digital</title>
+    <title>Petugas - Sistem Informasi Monitoring Kegiatan</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../assets/js/DataTables/datatables.css">
-    <link rel="icon" type="image/png" href="../assets/img/logo/logosn.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/img/logo/logosn3.png" sizes="32x32" />
     <script src="../assets/js/vendor/modernizr-2.8.3.min.js"></script>
 
     <?php
@@ -90,8 +90,8 @@
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="#"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
+                <a href="#"><img class="main-logo" src="../assets/img/logo/logo4.png" alt="" /></a>
+                <strong><a href="index.html"><img src="../assets/img/logo/logosn3.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
 
@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+                        <a href="index.html"><img class="main-logo" src="../assets/img/logo/logo4.png" alt="" /></a>
                     </div>
                 </div>
             </div>

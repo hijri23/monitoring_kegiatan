@@ -210,23 +210,30 @@
 
                     $no = 1;
 
-                    if (isset($_GET['tim'], $_GET['bulan'], $_GET['tahun'])) {
-                        $tim = $_GET['tim'];
-                        $bulan = $_GET['bulan'];
-                        $tahun = $_GET['tahun'];
+                    // if (isset($_GET['tim'], $_GET['bulan'], $_GET['tahun'])) {
+                    //     $tim = $_GET['tim'];
+                    //     $bulan = $_GET['bulan'];
+                    //     $tahun = $_GET['tahun'];
+
+
                         
-                        if ($kategori == "all" && $petugas == "all") {
-                            $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id ORDER BY arsip_cek ASC,arsip_id DESC");
-                        } elseif ($kategori == "all" || $petugas == "all") {
-                            if ($kategori == "all") {
-                                $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_petugas='$petugas' ORDER BY arsip_cek ASC,arsip_id DESC");
-                            } elseif ($petugas == "all") {
-                                $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' ORDER BY arsip_cek ASC,arsip_id DESC");
-                            }
-                        } elseif ($kategori != "all" && $petugas != "all") {
-                            $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' and arsip_petugas='$petugas' ORDER BY arsip_cek ASC,arsip_id DESC");
-                        }
-                    }
+                    //     if ($tim == "all" && $bulan == "Agustus" ) {
+                    //         $kegiatan = mysqli_query($koneksi, "SELECT * FROM kegiatan LIKE kegiatan_mulai= 2024-08 ORDER BY kegiatan_mulai ASC, kegiatan_id DESC");
+                    //     } else {
+                    //         $kegiatan = mysqli_query($koneksi, "SELECT * FROM kegiatan ORDER BY kegiatan_mulai ASC, kegiatan_id DESC");
+                    // while ($p = mysqli_fetch_array($kegiatan)) {
+                    //     }}
+                        
+                    //     elseif ($kategori == "all" || $petugas == "all") {
+                    //         if ($kategori == "all") {
+                    //             $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_petugas='$petugas' ORDER BY arsip_cek ASC,arsip_id DESC");
+                    //         } elseif ($petugas == "all") {
+                    //             $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' ORDER BY arsip_cek ASC,arsip_id DESC");
+                    //         }
+                    //     } elseif ($kategori != "all" && $petugas != "all") {
+                    //         $arsip = mysqli_query($koneksi, "SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_kategori='$kategori' and arsip_petugas='$petugas' ORDER BY arsip_cek ASC,arsip_id DESC");
+                    //     }
+                    // }
 
 
                     //$kegiatan = $_SESSION['id'];
@@ -289,7 +296,15 @@
                             $selisih_skrng = $selisih2->format("%a");
                             //$selisih_akhir = strftime($selisih1);
                             //$selisih_skrng = strftime($selisih2);
-                           $pembagian = $selisih_skrng/$selisih_akhir;
+                            
+                            // if ($selisih_akhir = 0){
+                            //     $selisih_akhir = 1;
+                            // } elseif ($selisih_akhir != 0){
+                            //     $selisih_akhir = $selisih_akhir;
+                                
+                            // }
+                            $pembagian = $selisih_skrng/$selisih_akhir;
+                           
                             //$pembagian = $selisih1/$selisih2;
                             $persentase2 = round($pembagian, 2);
 

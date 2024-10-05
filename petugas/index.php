@@ -83,12 +83,12 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <span class="caption-subject"><b>Grafik flow arsip</b></span>
+                                    <span class="caption-subject"><b>Grafik flow kegiatan</b></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="actions graph-rp graph-rp-dl">
-                                    <p>Grafik jumlah arsip masuk perhari selama sebulan</p>
+                                    <p>Grafik jumlah kegiatan selama sebulan</p>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
 
                         <h4><a class="cards-hd-dn" href="#"><?php echo $s['petugas_nama']; ?></a></h4>
                         <h5>Petugas</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
+                        <p class="ctn-cards">Monitoring Kegiatan jadi lebih mudah dengan sistem informasi monitoring kegiatan.</p>
                     </div>
                 </div>
 
